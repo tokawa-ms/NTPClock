@@ -1,0 +1,13 @@
+{
+  "name": "ntp-clock",
+  "version": "1.0.0",
+  "description": "NTP-synced accurate clock with time signal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "sntp": "^3.0.2"
+  }
+}
