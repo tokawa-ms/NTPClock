@@ -3,7 +3,8 @@ const Sntp = require('sntp');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
+const PORT = Number(process.env.PORT) || 3000;
+const HOST = '0.0.0.0';
 
 // NTP servers to try (in order)
 const NTP_SERVERS = [
@@ -52,6 +53,6 @@ app.get('/api/time', (req, res) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`NTP Clock server running at http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`NTP Clock server running on ${HOST}:${PORT}`);
 });
